@@ -1,12 +1,7 @@
-/** @type {import('next').NextConfig} */
+// next.config.ts  ← minimal now
 const nextConfig = {
-  images: {
-    domains: [
-      'cdn-icons-png.flaticon.com',
-      'upload.wikimedia.org',
-      'logos-world.net'
-    ],
-  },
-}
+  output: 'export',
+  images: { unoptimized: true }, // keep if you still use <Image />
+};
 
-module.exports = nextConfig
+export default nextConfig;
