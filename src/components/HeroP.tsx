@@ -84,7 +84,7 @@ export default function Hero() {
       <div className="relative z-20 flex flex-col lg:flex-row h-200">
         <div className="w-full lg:w-2/5 h-full lg:h-full relative order-1 lg:order-1">
           {/* Black background layer behind your image - with padding to show the black */}
-          <div className="absolute inset-0 bg-amber-900 opacity-30 lg:rounded-br-[1000px]" />
+          <div className="absolute inset-0 bg-amber-900 opacity-80 lg:rounded-br-[1000px]" />
           
           <img
             src="/img/pic.jpg"

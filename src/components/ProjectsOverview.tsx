@@ -74,9 +74,7 @@ export default function ProjectsOverview() {
           <h2 className="text-4xl font-bold text-orange-900 mb-6 leading-tight">
             Projects & Interests
           </h2>
-          <p className="text-gray-700 text-base leading-relaxed mb-6">
-          I've always enjoyed building things that are both functional and thoughtful — whether it's an interface that feels intuitive or a system that surfaces meaningful insights. Over time, I've picked up experience across the stack, from frontend design decisions to backend logic and data handling.
-          </p>
+          
           <p className="text-gray-700 text-base leading-relaxed mb-6">
           At Oracle, I joined the AutoML research team and worked on an automated forecasting pipeline. One part that stuck with me was building out the explainability layer — finding ways to show users not just the output, but why the model made its predictions. That experience pushed me to think more deeply about how we communicate what’s under the hood, and how trust in a tool often comes down to how clearly it speaks.
           </p>
