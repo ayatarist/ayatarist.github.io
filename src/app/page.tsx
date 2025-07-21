@@ -6,6 +6,13 @@ import Projects from '@/components/ProjectsOverview';
 // import Testimonies from '@/components/testimonies';
 import Footer from '@/components/footer';
 
+export const metadata = {
+  title: "Aya Tarist | Portfolio",
+  description: "Software engineer, researcher, and builder.",
+  icons: {
+    icon: "/img/favicon.png",
+  },
+}
 
 
 export default function HomePage() {
