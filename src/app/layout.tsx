@@ -15,9 +15,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Aya Tarist | Portfolio",
   description: "Software engineer, researcher, and builder.",
-  icons: {
-    icon: "/favicon.png",
-  },
+  icons: { icon: "/favicon.png" },
+  viewport: "width=device-width, initial-scale=1", 
 };
 
 export default function RootLayout({
