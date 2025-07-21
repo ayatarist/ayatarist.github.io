@@ -10,7 +10,7 @@ export const metadata = {
   title: "Aya Tarist | Portfolio",
   description: "Software engineer, researcher, and builder.",
   icons: {
-    icon: "/img/favicon.png",
+    icon: "/favicon.png",
   },
 }
 
