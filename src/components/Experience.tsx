@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client'
 import React, { useState, useEffect, Dispatch, SetStateAction } from 'react'
 import { MapPin, Briefcase, Users, GraduationCap } from 'lucide-react'

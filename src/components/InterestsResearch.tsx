@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 // src/components/InterestsResearch.tsx
 import React from 'react';
 
