@@ -12,7 +12,7 @@ import {
 } from 'lucide-react'
 
 export default function PortfolioFooter() {
-  const currentYear = new Date().getFullYear()
+  
 
   const contactInfo = [
     {
