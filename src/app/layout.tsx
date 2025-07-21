@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   title: "Aya Tarist | Portfolio",
   description: "Software engineer, researcher, and builder.",
   icons: {
-    icon: "/favicon.png", // assuming your logo is in public/favicon.png
+    icon: "/favicon.png",
   },
-}
+};
 
 export default function RootLayout({
   children,
