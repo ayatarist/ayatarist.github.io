@@ -46,9 +46,9 @@ const timelineData: Record<'professional' | 'education' | 'leadership', Timeline
       description:
         'Built an interactive web application to help users discover and locate trees across Pennsylvania parks.',
       achievements: [
-        'Converted Excel datasets into dynamic, searchable interfaces',
+        'Developed the core navigation and structural backbone of the web application, ensuring intuitive user flow and accessibility',
         'Implemented geolocation-aware filtering and mapping features',
-        'Designed responsive PWA with offline capabilities',
+        'Integrated contextual information to provide users with comprehensive information on tree species and selection criteria, drawing from external reliable sources and curated datasets.',
       ],
       skills: ['React', 'Tailwind CSS', 'PWA', 'Geolocation API', 'Data Visualization', 'JavaScript'],
       logo: 'img/peak.webp',
@@ -60,10 +60,9 @@ const timelineData: Record<'professional' | 'education' | 'leadership', Timeline
       date: 'Summer 2023',
       title: 'Accessibility Consultant & Research Fellow',
       description:
-        'Conducted a mixed‑methods study to assess and improve digital accessibility among rural PA businesses.',
+        'Conducted a mixed‑methods study to assess and improve digital accessibility among PA small businesses.',
       achievements: [
-        'Audited 15+ educational websites for WCAG 2.1 compliance, boosting adherence by 65%',
-        'Led semi‑structured interviews with digital accessibility specialists and rural business owners to surface practical barriers',
+        'Led interviews with digital accessibility specialists and  business owners to surface practical barriers',
         'Synthesized qualitative data in Dedoose to identify recurring compliance gaps and user pain points',
         'Reviewed ADA Accessibility Standards and emerging legislation to inform audit criteria',
         'Delivered tailored advisory sessions, translating technical findings into clear, actionable recommendations for business owners'
@@ -135,23 +134,23 @@ const timelineData: Record<'professional' | 'education' | 'leadership', Timeline
       logoScale: 1,
     },
   ],
+  // Assuming this is part of a larger data structure for your portfolio
   leadership: [
     {
       id: 'awards-leadership',
-      description: '',
+      description: '', // Keep this description field if it's meant for a general overview of this section
       achievements: [
-        'Bucknell Boulder Mozilla Tech Fellow — Selected for Mozilla Foundation\'s Responsible Computing Challenge',
-        '    • Researched digital accessibility under Professor Ross to evaluate rural businesses\' WCAG compliance and develop actionable recommendations',
-        'Digital Humanities Researcher — Bucknell University',
-        'French Teaching Assistant — Bucknell University',
-        'Leadership Intern — College of Engineering',
+        '<strong>Bucknell Boulder Mozilla Tech Fellow</strong> — Selected for Mozilla Foundation\'s Responsible Computing Challenge. Conducted extensive research into <strong>digital accessibility</strong>, assessing WCAG compliance for various businesses and formulating practical recommendations. Beyond compliance, I investigated the <strong>intersections of digital accessibility and sustainability</strong>, speaking with subject matter experts to identify systemic patterns. Additionally, I explored dynamics of <strong>cross-functional collaboration</strong> across UI/UX designers, project managers, and software engineers, pinpointing common communication and workflow challenges in software development.',
+        '<strong>Digital Humanities Researcher</strong> — Bucknell University',
+        '<strong>French Teaching Assistant</strong> — Bucknell University',
+        '<strong>Leadership Intern</strong> — College of Engineering',
         '    • Led cross-departmental student initiatives and facilitated communication between engineering students and faculty leadership',
-        'Class Representative — Society of Women Engineers',
-        'Founder & President — Middle Eastern North African Student Association',
-        'Michael M. & Lillian Amber Fremont Scholar',
-        'Grace Hopper Advancing Inclusion Scholar \'24',
-        'Society of Women Engineers Scholar \'24',
-        'Dean\'s List \'22, \'23, \'24'
+        '<strong>Class Representative</strong> — Society of Women Engineers',
+        '<strong>Founder & President</strong> — Middle Eastern North African Student Association',
+        '<strong>Michael M. & Lillian Amber Fremont Scholar</strong>',
+        '<strong>Grace Hopper Advancing Inclusion Scholar \'24</strong>',
+        '<strong>Society of Women Engineers Scholar \'24</strong>',
+        '<strong>Dean\'s List \'22, \'23, \'24</strong>'
       ],
       skills: [],
     },
@@ -307,40 +306,41 @@ const TimelineCard: React.FC<TimelineCardProps> = ({ entry, index, active }) => 
           </div>
         )}
         
-        {/* Show achievements directly for awards in leadership section */}
-        {showAchievementsDirectly && showAchievements && (
+               {/* Show achievements directly for awards in leadership section */}
+               {showAchievementsDirectly && showAchievements && (
           <div className="bg-orange-25 rounded-xl p-4 border border-orange-100">
             <ul className="space-y-3">
               {entry.achievements.map((achievement, i) => {
                 const isIndented = achievement.startsWith('    •');
-                const hasOrganization = achievement.includes(' — ') && !isIndented;
+                // Check for ' — ' AND ensure it's NOT the Mozilla blurb for special parsing
+                const isOrganizationEntry = achievement.includes(' — ') && !isIndented && !achievement.includes('Mozilla Tech Fellow');
                 
                 if (isIndented) {
                   return (
                     <li key={i} className="text-gray-600 text-sm flex items-start gap-3 ml-4">
-                      <span className="italic">{achievement.replace('    • ', '')}</span>
+                      <span className="italic" dangerouslySetInnerHTML={{ __html: achievement.replace('    • ', '') }}></span>
                     </li>
                   );
                 }
                 
-                if (hasOrganization) {
+                if (isOrganizationEntry) {
                   const [position, organization] = achievement.split(' — ');
                   return (
                     <li key={i} className="text-gray-700 text-sm flex items-start gap-3">
                       <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
                       <span>
-                        <span className="font-semibold">{position}</span>
-                        <span className="text-orange-700"> — {organization}</span>
+                        <span className="font-semibold" dangerouslySetInnerHTML={{ __html: position }}></span>
+                        <span className="text-orange-700"> — <span dangerouslySetInnerHTML={{ __html: organization }}></span></span>
                       </span>
                     </li>
                   );
                 }
                 
-                
+                // This is the general case, which will now correctly apply to the Mozilla blurb
                 return (
                   <li key={i} className="text-gray-700 text-sm flex items-start gap-3">
                     <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="font-medium">{achievement}</span>
+                    <span className="font-medium" dangerouslySetInnerHTML={{ __html: achievement }}></span>
                   </li>
                 );
               })}

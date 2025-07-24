@@ -13,48 +13,49 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Formula 1 Driver Rankings Predictor',
+    title: 'Formula 1 Driver Rankings Predictor',
     description:
-    'Using historical race data from 2009–2022, I engineered features like qualifying position, podium finishes, and team performance, then trained logistic regression and random forest models in Python to forecast end‑of‑season driver standings with 85% accuracy. All analysis and visualizations live in an interactive Jupyter Notebook.',
+    'Using historical race data from 2009–2022, I engineered features like <strong>qualifying position, podium finishes, and team performance</strong>, then trained <strong>logistic regression</strong> and <strong>random forest models</strong> in Python to forecast end‑of‑season driver standings with <strong>85% accuracy</strong>. All analysis and visualizations live in an interactive Jupyter Notebook.',
     tags: ['Python', 'Machine Learning', 'Pandas', 'Jupyter'],
     link: 'https://github.com/ayatarist/Formula-1-Rankings'
   },
   {
     title: 'Accessibility Design Plugin',
     description:
-     'As part of Northeastern’s AccessHack, co-built a TypeScript Figma plugin that evaluates frames and components for accessibility issues—color contrast, missing alt text, and keyboard focus order—and highlights them directly in the design canvas. This tool helps designers catch WCAG compliance gaps early, making inclusive design easier from the start.',
+     'As part of Northeastern’s AccessHack, co-built a TypeScript Figma plugin that evaluates frames and components for <strong>accessibility issues</strong>—<strong>color contrast, missing alt text, and keyboard focus order</strong>—and highlights them directly in the design canvas. This tool helps designers catch <strong>WCAG compliance</strong> gaps early, making <strong>inclusive design</strong> easier from the start.',
     tags: ['TypeScript', 'Figma Plugin', 'Accessibility', 'WCAG'],
     link: 'https://github.com/ayatarist/AccessHackPlugIn'
   },
   {
     title: 'FlappyBison',
     description:
-      'FlappyBison started as a class project to explore JavaFX and OOP design. Created through a modular architecture with separate classes for game logic, collision detection, and UI navigation, using JavaFX’s animation and event APIs to manage scene transitions (start, play, game‑over). Custom physics simulate the bird’s movement, and procedurally generated obstacles keep gameplay challenging.',
+      'FlappyBison started as a class project to explore <strong>JavaFX</strong> and <strong>OOP design</strong>. Created through a <strong>modular architecture</strong> with separate classes for <strong>game logic, collision detection, and UI navigation</strong>, using JavaFX’s animation and event APIs to manage scene transitions (start, play, game‑over). <strong>Custom physics</strong> simulate the bird’s movement, and <strong>procedurally generated obstacles</strong> keep gameplay challenging.',
     tags: ['Java', 'JavaFX', 'Game Dev'],
     link: 'https://github.com/ayatarist/FlappyBison'
   },
   {
     title: 'Power Generation Optimization',
     description:
-      'I developed Python scripts and Jupyter notebooks using Gurobi to build linear and mixed‑integer programming models that schedule power plant output to minimize generation costs while meeting demand forecasts and CO₂ emission limits. I cleaned and processed historical load and emission data, formulated objective functions and constraints, and created visualizations to explore cost‑versus‑emissions trade‑offs, gaining hands‑on experience in energy economics and optimization techniques.',
+      'I developed Python scripts and Jupyter notebooks using Gurobi to build <strong>linear and mixed‑integer programming models</strong> that schedule power plant output to minimize generation costs while meeting demand forecasts and CO₂ emission limits. I cleaned and processed historical load and emission data, <strong>formulated objective functions and constraints</strong>, and created visualizations to explore <strong>cost‑versus‑emissions trade‑offs</strong>, gaining hands‑on experience in <strong>energy economics and optimization techniques</strong>.',
     tags: ['Python', 'Gurobi', 'Linear Programming', 'MIP'],
     link: 'https://github.com/ayatarist/power_gen_optimization'
   },
   {
     title: 'Digitizing Suzette (Fork)',
     description:
-      'In this ongoing Bucknell University collaboration (Jan 2024 – Present), I help convert and enrich 19th‑century French domestic‑education texts into TEI/XML. Featuring narrative, illustrations, questions, and curricular metadata across 144 chapters, it reveals how this widely distributed text blends progressive intellectual aims with conservative social instruction in moral education, natural sciences, industry, and domestic economy.',
+      'As a Digital Researcher, I contribute to the <strong>Digitizing Suzette Project</strong>, a digital humanities initiative analyzing 19th-century French domestic education. My work involves <strong> TEI/XML markup</strong> and <strong>analytical tagging</strong> of texts, identifying <strong>nuanced cultural references, culinary terminology, and domestic practices</strong>. This meticulous process is critical for building a structured resource that uncovers how widely distributed educational materials subtly reinforced or challenged <strong>gender roles and social expectations during the French Third Republic.</strong>',
     tags: ['TEI/XML', 'LEAF-Writer', 'Digital Humanities'],
     link: 'https://github.com/ayatarist/suzette',
-    pressReleaseLink: 'https://www.chesapeakeconservancy.org/projects/pennsylvania-native-tree-selector'}
-  ,
+    pressReleaseLink: 'https://www.chesapeakeconservancy.org/projects/pennsylvania-native-tree-selector'
+  },
   {
     title: 'Pennsylvania Native Tree Selector',
     description:
-      'As one of the lead developers on a cross‑functional team, and in partnership with the Chesapeake Conservancy to transform their Excel‑based species filter into an interactive React web app. Over eight agile sprints, we gathered stakeholder requirements, analyzed the legacy tool’s core features, compiled USDA tree and image datasets, and implemented geolocation‑driven recommendations. The result is a PWA that helps landowners and conservation planners intuitively select native Pennsylvania trees, making restoration decisions both data‑driven and user‑friendly.',
+      'As one of the lead developers on a cross‑functional team, and in partnership with the Chesapeake Conservancy to transform their Excel‑based species filter into an <strong>interactive React web app</strong>. Over <strong>eight agile sprints</strong>, we gathered stakeholder requirements, analyzed the legacy tool’s core features, compiled USDA tree and image datasets, and implemented geolocation‑driven recommendations. The result is a <strong>PWA</strong> that helps landowners and conservation planners intuitively select native Pennsylvania trees, making restoration decisions both <strong>data‑driven and user‑friendly</strong>.',
     tags: ['React', 'Tailwind CSS', 'Geolocation', 'PWA'],
     link: 'https://github.com/ayatarist/Pa-Tree-Selector-Tool',
-    pressReleaseLink: 'https://www.chesapeakeconservancy.org/projects/pennsylvania-native-tree-selector'}
+    pressReleaseLink: 'https://www.chesapeakeconservancy.org/projects/pennsylvania-native-tree-selector'
+  }
 ]
 
 export default function ProjectsOverview() {
@@ -100,8 +101,8 @@ export default function ProjectsOverview() {
                 <h3 className="text-2xl font-bold text-amber-900 mb-2">
                   {project.title}
                 </h3>
-                <p className="text-stone-700 mb-3 text-sm text-justify">
-                  {project.description}
+                {/* Use dangerouslySetInnerHTML to render HTML from the string */}
+                <p className="text-stone-700 mb-3 text-sm text-justify" dangerouslySetInnerHTML={{ __html: project.description }}>
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, i) => (
