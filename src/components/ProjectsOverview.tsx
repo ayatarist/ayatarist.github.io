@@ -51,7 +51,7 @@ const projects: Project[] = [
   {
     title: 'Pennsylvania Native Tree Selector',
     description:
-      'As one of the lead developers on a cross‑functional team, and in partnership with the Chesapeake Conservancy to transform their Excel‑based species filter into an interactive React web app. Over four agile sprints, we gathered stakeholder requirements, analyzed the legacy tool’s core features, compiled USDA tree and image datasets, and implemented geolocation‑driven recommendations. The result is a PWA that helps landowners and conservation planners intuitively select native Pennsylvania trees, making restoration decisions both data‑driven and user‑friendly.',
+      'As one of the lead developers on a cross‑functional team, and in partnership with the Chesapeake Conservancy to transform their Excel‑based species filter into an interactive React web app. Over eight agile sprints, we gathered stakeholder requirements, analyzed the legacy tool’s core features, compiled USDA tree and image datasets, and implemented geolocation‑driven recommendations. The result is a PWA that helps landowners and conservation planners intuitively select native Pennsylvania trees, making restoration decisions both data‑driven and user‑friendly.',
     tags: ['React', 'Tailwind CSS', 'Geolocation', 'PWA'],
     link: 'https://github.com/ayatarist/Pa-Tree-Selector-Tool',
     pressReleaseLink: 'https://www.chesapeakeconservancy.org/projects/pennsylvania-native-tree-selector'}

@@ -142,7 +142,7 @@ const timelineData: Record<'professional' | 'education' | 'leadership', Timeline
       achievements: [
         'Bucknell Boulder Mozilla Tech Fellow — Selected for Mozilla Foundation\'s Responsible Computing Challenge',
         '    • Researched digital accessibility under Professor Ross to evaluate rural businesses\' WCAG compliance and develop actionable recommendations',
-        'Digital Humanities Research Assistant — Digital Humanities & French Department',
+        'Digital Humanities Researcher — Bucknell University',
         'French Teaching Assistant — Bucknell University',
         'Leadership Intern — College of Engineering',
         '    • Led cross-departmental student initiatives and facilitated communication between engineering students and faculty leadership',
