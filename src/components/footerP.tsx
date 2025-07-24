@@ -2,7 +2,7 @@
 'use client'
 
 import React from 'react'
-import { Mail, Linkedin, Github, ExternalLink, MapPin, Phone } from 'lucide-react'
+import { Mail, Linkedin, Github, Phone } from 'lucide-react'
 
 export default function PortfolioFooter() {
   const contactInfo = [
