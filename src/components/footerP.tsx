@@ -19,12 +19,6 @@ export default function PortfolioFooter() {
       value: '+1 (541) 787-9650',
       href: 'tel:+15417879650',
     },
-    {
-      icon: MapPin,
-      label: 'Location',
-      value: 'New York, NY',
-      href: null,
-    },
   ]
 
   const socialLinks = [
@@ -37,12 +31,7 @@ export default function PortfolioFooter() {
       icon: Github,
       label: 'GitHub',
       href: 'https://github.com/ayatarist',
-    },
-    {
-      icon: ExternalLink,
-      label: 'Portfolio',
-      href: 'https://yourportfolio.com',
-    },
+    }
   ]
 
   return (
@@ -96,7 +85,7 @@ export default function PortfolioFooter() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-xs">
           <p className="text-amber-900">© {2024} Aya Tarist. All rights reserved.</p>
           <div className="flex flex-wrap gap-4 mt-2 md:mt-0">
-            {['About', 'Experience', 'Projects', 'Contact'].map((section) => (
+            {['Home', 'Experience', 'Projects', 'Contact'].map((section) => (
               <a
                 key={section}
                 href={`#${section.toLowerCase()}`}
@@ -108,4 +97,6 @@ export default function PortfolioFooter() {
           </div>
         </div>
       </div>
-    </footer> )}
+    </footer>
+  )
+}

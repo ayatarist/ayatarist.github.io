@@ -75,11 +75,11 @@ export default function ProjectsOverview() {
             Projects & Interests
           </h2>
           
-          <p className="text-gray-700 text-base leading-relaxed mb-6">
+          <p className="text-gray-700 text-base leading-relaxed mb-6 text-justify">
           At Oracle, I joined the AutoML research team and worked on an automated forecasting pipeline. One part that stuck with me was building out the explainability layer — finding ways to show users not just the output, but why the model made its predictions. That experience pushed me to think more deeply about how we communicate what’s under the hood, and how trust in a tool often comes down to how clearly it speaks.
           </p>
-          <p className="text-gray-700 text-base leading-relaxed mb-6">
-          Right now, I’m working on something new for the upcoming World Cup in Morocco. A tool to help visitors navigate games and experiences by connecting real-time insights with past trends. It’s a side project that’s helping me get more comfortable with LLMs, embeddings, and RAG! Still learning & building, but hoping to share it soon!
+          <p className="text-gray-700 text-base leading-relaxed mb-6 text-justify">
+          Currently, I’m putting that into practice on a side project: Morocco—my home country—is one of the hosts of the 2030 World Cup, and I wanted a project that was more than “just another chatbot”—something that lets me use both my technical skills and my multilingual background to see how this tech works across Arabic, French, and English. So I’m building a prototype that helps visitors figure out routes and real local experiences in Casablanca. It runs on placeholder match data + local transit feeds, a vector store of FAQs/POIs, and an open‑source LLM wired up with RAG (via LangChain/LlamaIndex). Still learning & building, but hoping to share it soon!
           </p>
       </div>
 
@@ -100,7 +100,7 @@ export default function ProjectsOverview() {
                 <h3 className="text-2xl font-bold text-amber-900 mb-2">
                   {project.title}
                 </h3>
-                <p className="text-stone-700 mb-3 text-sm">
+                <p className="text-stone-700 mb-3 text-sm text-justify">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">

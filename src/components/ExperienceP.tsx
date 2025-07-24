@@ -6,9 +6,9 @@ import { MapPin, Briefcase, Users, GraduationCap } from 'lucide-react'
 
 interface TimelineEntry {
   id: string
-  date: string
+  date?: string
   dateRange?: string
-  title: string
+  title?: string
   description: string
   achievements: string[]
   skills: string[]
@@ -58,15 +58,19 @@ const timelineData: Record<'professional' | 'education' | 'leadership', Timeline
     {
       id: 'mozilla-2023',
       date: 'Summer 2023',
-      title: 'Research Grant Recipient',
+      title: 'Accessibility Consultant & Research Fellow',
       description:
-        'Led comprehensive accessibility audits and rebuilt digital platforms with inclusive design principles.',
+        'Conducted a mixed‑methods study to assess and improve digital accessibility among rural PA businesses.',
       achievements: [
-        'Conducted WCAG 2.1 compliance audits for 15+ educational websites',
-        'Rebuilt Bucknell Digital Scholarship portal with ARIA-driven design',
-        'Improved screen-reader usability by 65% through accessibility enhancements',
+        'Audited 15+ educational websites for WCAG 2.1 compliance, boosting adherence by 65%',
+        'Led semi‑structured interviews with digital accessibility specialists and rural business owners to surface practical barriers',
+        'Synthesized qualitative data in Dedoose to identify recurring compliance gaps and user pain points',
+        'Reviewed ADA Accessibility Standards and emerging legislation to inform audit criteria',
+        'Delivered tailored advisory sessions, translating technical findings into clear, actionable recommendations for business owners'
       ],
-      skills: ['WCAG 2.1', 'ARIA', 'Accessibility Testing', 'HTML', 'CSS', 'JavaScript'],
+      skills: [
+        'WCAG 2.1', 'ARIA', 'Qualitative Research', 'Dedoose', 'ADA Standards', 'Accessibility Advising'
+      ],
       logo: '/img/true.png',
       logoPosition: 'center bottom',
       logoScale: 2.1,
@@ -132,76 +136,25 @@ const timelineData: Record<'professional' | 'education' | 'leadership', Timeline
     },
   ],
   leadership: [
-    // {
-    //   id: 'swe-rep-2024',
-    //   date: '2023-2024',
-    //   dateRange: 'Aug 2023 – Dec 2024',
-    //   title: 'Class Representative',
-    //   organization: 'Society of Women Engineers',
-    //   description:
-    //     'Led initiatives to grow SWE membership and engagement across the engineering community.',
-    //   achievements: [
-    //     'Represented 200+ students in advocacy and programming decisions',
-    //     'Organized technical workshops and networking events',
-    //     'Increased membership by 30% through targeted outreach campaigns',
-    //   ],
-    //   skills: [],
-    //   logo: '/img/swe-logo.png',
-    //   logoPosition: 'center',
-    //   logoScale: 1,
-    // },
-    // {
-    //   id: 'dean-intern-2023',
-    //   date: '2022-2023',
-    //   dateRange: 'Sep 2022 – May 2023',
-    //   title: 'Strategic Planning Intern',
-    //   organization: "Engineering Dean's Office",
-    //   location: 'Bucknell University',
-    //   description:
-    //     'Led cross-functional team coordination for major engineering events and student engagement initiatives.',
-    //   achievements: [
-    //     'Managed 17-member board for Engineering Week programming',
-    //     'Analyzed attendance metrics and engagement data',
-    //     'Presented insights that strengthened student-faculty collaboration',
-    //   ],
-    //   skills: [],
-    //   logo: '/img/bucknell.png',
-    //   logoPosition: 'center',
-    //   logoScale: 1,
-    // },
-    // {
-    //   id: 'menaa-founder',
-    //   date: '2022-2024',
-    //   title: 'Founder & President',
-    //   organization: 'MENA Association at Bucknell',
-    //   description:
-    //     'Established and led cultural organization promoting Middle Eastern and North African awareness on campus.',
-    //   achievements: [
-    //     'Founded organization from concept to 50+ active members',
-    //     'Organized cultural events and educational programming',
-    //     'Secured funding and partnerships for sustainable growth',
-    //   ],
-    //   skills: [],
-    //   logo: '/img/bucknell.png',
-    //   logoPosition: 'center',
-    //   logoScale: 1,
-    // },
-    // {
-    //   id: 'awards',
-    //   date: '2022-2024',
-    //   title: 'Recognition & Awards',
-    //   organization: '',
-    //   description: '',
-    //   achievements: [
-    //     'First Global Challenge Alumni Founding Member',
-    //     'Pioneer Scholar',
-    //     'Fremont Scholar at Bucknell for Leadership and Academic Excellence',
-    //   ],
-    //   skills: [],
-    //   logo: '',
-    //   logoPosition: 'center',
-    //   logoScale: 1,
-    // },
+    {
+      id: 'awards-leadership',
+      description: '',
+      achievements: [
+        'Bucknell Boulder Mozilla Tech Fellow — Selected for Mozilla Foundation\'s Responsible Computing Challenge',
+        '    • Researched digital accessibility under Professor Ross to evaluate rural businesses\' WCAG compliance and develop actionable recommendations',
+        'Digital Humanities Research Assistant — Digital Humanities & French Department',
+        'French Teaching Assistant — Bucknell University',
+        'Leadership Intern — College of Engineering',
+        '    • Led cross-departmental student initiatives and facilitated communication between engineering students and faculty leadership',
+        'Class Representative — Society of Women Engineers',
+        'Founder & President — Middle Eastern North African Student Association',
+        'Michael M. & Lillian Amber Fremont Scholar',
+        'Grace Hopper Advancing Inclusion Scholar \'24',
+        'Society of Women Engineers Scholar \'24',
+        'Dean\'s List \'22, \'23, \'24'
+      ],
+      skills: [],
+    },
   ],
 }
 
@@ -281,7 +234,7 @@ const TimelineCard: React.FC<TimelineCardProps> = ({ entry, index, active }) => 
   const showAchievements = entry.achievements.length > 0
 
   // For leadership section, show achievements directly without expand/collapse
-  const showAchievementsDirectly = active === 'leadership' && entry.id === 'awards'
+  const showAchievementsDirectly = active === 'leadership'
 
   return (
     <div
@@ -355,15 +308,42 @@ const TimelineCard: React.FC<TimelineCardProps> = ({ entry, index, active }) => 
         )}
         
         {/* Show achievements directly for awards in leadership section */}
-        {showAchievementsDirectly && (
+        {showAchievementsDirectly && showAchievements && (
           <div className="bg-orange-25 rounded-xl p-4 border border-orange-100">
             <ul className="space-y-3">
-              {entry.achievements.map((achievement, i) => (
-                <li key={i} className="text-gray-700 text-sm flex items-start gap-3">
-                  <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <span>{achievement}</span>
-                </li>
-              ))}
+              {entry.achievements.map((achievement, i) => {
+                const isIndented = achievement.startsWith('    •');
+                const hasOrganization = achievement.includes(' — ') && !isIndented;
+                
+                if (isIndented) {
+                  return (
+                    <li key={i} className="text-gray-600 text-sm flex items-start gap-3 ml-4">
+                      <span className="italic">{achievement.replace('    • ', '')}</span>
+                    </li>
+                  );
+                }
+                
+                if (hasOrganization) {
+                  const [position, organization] = achievement.split(' — ');
+                  return (
+                    <li key={i} className="text-gray-700 text-sm flex items-start gap-3">
+                      <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <span>
+                        <span className="font-semibold">{position}</span>
+                        <span className="text-orange-700"> — {organization}</span>
+                      </span>
+                    </li>
+                  );
+                }
+                
+                
+                return (
+                  <li key={i} className="text-gray-700 text-sm flex items-start gap-3">
+                    <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="font-medium">{achievement}</span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         )}
@@ -407,16 +387,18 @@ const TimelineCard: React.FC<TimelineCardProps> = ({ entry, index, active }) => 
 export default function ProfessionalTimeline() {
   const [active, setActive] = useState<SectionKey>('professional')
   const entries = timelineData[active]
-  const sortedEntries = [...entries].sort((a, b) => parseInt(b.date) - parseInt(a.date))
+  const sortedEntries = [...entries].sort((a, b) => parseInt(b.date || '0') - parseInt(a.date || '0'))
 
   return (
-    <section id="timeline" className="relative w-full bg-white py-24 px-4 sm:px-6 md:px-12 lg:px-24">
+    <section id="experience" className="relative w-full bg-white py-24 px-4 sm:px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <Tabs active={active} setActive={setActive} />
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className={`grid gap-8 ${active === 'leadership' ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'}`}>
           {sortedEntries.map((entry, idx) => (
             <TimelineCard key={entry.id} entry={entry} index={idx} active={active} />
           ))}
         </div>
       </div>
-    </section> )}
+    </section>
+  )
+}

@@ -47,7 +47,7 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-screen overflow-visible lg:overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">
+    <section id="home" className="relative w-full min-h-screen overflow-visible lg:overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">
       {/* Add the float animation CSS */}
       <style jsx>{`
         @keyframes float {
@@ -76,65 +76,66 @@ export default function Hero() {
       `}</style>
       
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-0 w-64 h-64 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl animate-float" />
+        <div className="absolute top-0 left-0 w-64 h-80 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl animate-float" />
         <div className="absolute top-0 right-0 w-64 h-64 bg-amber-200 rounded-full mix-blend-multiply filter blur-xl animate-float-delay-5" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-yellow-200 rounded-full mix-blend-multiply filter blur-xl animate-float-delay-10" />
       </div>
 
-      <div className="relative z-20 flex flex-col lg:flex-row h-200">
+      <div className="relative z-5 flex flex-col lg:flex-row "> {/* if u add h-200 you will fix the desktop issue but otherwise it's across device friendly */}
         <div className="w-full lg:w-2/5 h-full lg:h-full relative order-1 lg:order-1">
           {/* Black background layer behind your image - with padding to show the black */}
-          <div className="absolute inset-0 bg-amber-900 opacity-80 lg:rounded-br-[1000px]" />
+          <div className="absolute inset-0 bg-amber-900 opacity-80 lg:rounded-br-[1300px]" />
           
           <img
             src="/img/pic.jpg"
             alt="Aya Tarist"
-            className="relative w-full h-full object-cover lg:rounded-br-[1000px] transform scale-100 hover:scale-110 transition-transform duration-200 m-7"
+            className="relative w-full h-full object-cover lg:rounded-br-[1000px] transform scale-100 hover:scale-130 transition-transform duration-200 m-7"
             style={{ objectPosition: '60% 90%' }}
           />
           <div className="absolute top-4 right-4 w-12 h-12 bg-orange-300/30 rounded-full backdrop-blur-sm animate-[float_4s_ease-in-out_infinite]" />
           <div className="absolute bottom-10 left-8 w-8 h-8 bg-amber-300/40 rounded-full backdrop-blur-sm animate-[float_6s_ease-in-out_infinite_2s]" />
         </div>
 
-        <div className="w-full lg:w-3/5 flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24 py-10 order-2 lg:order-2">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight text-amber-900 mb-10">
+        <div className="w-full lg:w-3/5 flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24 py-4 order-2 lg:order-2">
+          <h1 className="text-xl sm:text-xl md:text-xl lg:text-7xl font-extrabold leading-tight text-amber-900 mb-5">
             <TypewriterText text="Hi!" speed={200} />
             <br />
             <span className="bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600 bg-clip-text">
-              <TypewriterText text="I'm Aya." speed={120} delay={100} />
+              <TypewriterText text="I'm Aya." speed={140} delay={100} />
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-amber-800 max-w-1xl leading-relaxed mb-5">
+          <p className="text-base sm:text-lg md:text-1xl text-amber-800 max-w-7xl leading-relaxed mb-2 text-justify">
             <TypewriterText
               text={
-                "I've always enjoyed building things that are both functional and thoughtful — whether it's an interface that feels intuitive or a system that surfaces meaningful insights. Over time, I've picked up experience across the stack, from frontend design decisions to backend logic and data handling.\n" +
+                "I am a recent Computer Science Engineering and Business Analytics graduate." +
                 "\n"+
-                "I'm actively seeking opportunities in Software Engineering, Business Analysis, Consulting, and Data Analysis.\n" +
-                "Feel free to check out my projects below & let's connect! I'd love to chat."
+                "What excites me most is engaging at the intersection of technology and other disciplines: collaborating with designers to craft clear interfaces, partnering with data teams to distill actionable insights, and working alongside engineers to build reliable systems that translate complex concepts into practical everyday tools! \n"+
+                "\n"+
+                "Through my academic work and personal projects, I've developed experience across the full stack - from frontend design and user experience to backend development and data analysis. \n" +
+                "\n"
               }
-              speed={20}
-              delay={100}
+              speed={10}
+              delay={20}
+            />
+          </p>
+          <p className="text-base sm:text-lg md:text-1xl text-amber-800 font-semibold max-w-5xl leading-relaxed mb-2 text-justify">
+            <TypewriterText
+              text={
+                "I'm actively seeking opportunities where I can contribute as a Business/Data Analyst, Consultant, or Software Engineer.\n" +
+                "Feel free to explore my work below, and don't hesitate to reach out! "
+              }
+              speed={30}
+              delay={50}
             />
           </p>
 
-          {/* <div className="mb-8 flex flex-col sm:flex-row gap-7 justify-center">
-            <a
-              href="#contact"
-              className="group inline-flex items-center justify-center px-3 py-2 bg-transparent border-2 border-amber-600 text-amber-700 font-semibold rounded-full hover:bg-amber-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-            >
-              Let's Connect!
-              <svg className="ml-2 w-5 h-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-              </svg>
-            </a>
-          </div> */}
-
           {/* Navigation moved to bottom-right */}
-          <div className="flex justify-end mt-12">
-            <nav className="flex flex-wrap items-center justify-end gap-4 text-lg sm:text-xl font-bold text-amber-700">
+          <div className="flex justify-end mt-10">
+            <nav className="flex flex-wrap items-center justify-end gap-5 text-lg sm:text-xl font-semibold text-amber-900">
               {[
-                { href: "#timeline", text: "Experience" },
+                // { href: "#home", text: "Home" },
+                // { href: "#experience", text: "Experience" },
                 { href: "#projects", text: "Projects" },
                 { href: "/docs/resume.pdf", text: "Resume", external: true },
                 { href: "#about", text: "About Me" },
@@ -146,9 +147,9 @@ export default function Hero() {
                     className="hover:text-orange-600 transition-all duration-300 relative"
                   >
                     {item.text}
-                    <span className="absolute -bottom-4 left-0 w-full h-1 bg-gradient-to-r from-orange-900 to-amber-500" />
+                    <span className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-orange-900 to-amber-500" />
                   </a>
-                  {idx < 3 && <span className="text-orange-900">•</span>}
+                  {idx < 4 && <span className="text-amber-900">•</span>}
                 </React.Fragment>
               ))}
             </nav>
