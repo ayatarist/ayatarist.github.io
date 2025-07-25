@@ -130,14 +130,14 @@ export default function Hero() {
             />
           </p>
 
-          {/* Navigation moved to bottom-right
+       
           <div className="flex justify-end mt-10">
             <nav className="flex flex-wrap items-center justify-end gap-5 text-lg sm:text-xl font-semibold text-amber-900">
               {[
                 // { href: "#home", text: "Home" },
-                // { href: "#experience", text: "Experience" },
-                // { href: "#projects", text: "Projects" },
-                // { href: "/docs/resume.pdf", text: "Resume", external: true },
+                { href: "#experience", text: "Experience" },
+                { href: "#projects", text: "Projects" },
+                { href: "/docs/resume.pdf", text: "Resume", external: true },
                 // { href: "#about", text: "About Me" },
               ].map((item, idx) => (
                 <React.Fragment key={item.href}>
@@ -153,7 +153,7 @@ export default function Hero() {
                 </React.Fragment>
               ))}
             </nav>
-          </div>         */}
+          </div>        
         </div>
       </div>
     </section>

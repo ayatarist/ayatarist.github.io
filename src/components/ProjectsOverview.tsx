@@ -20,13 +20,6 @@ const projects: Project[] = [
     link: 'https://github.com/ayatarist/Formula-1-Rankings'
   },
   {
-    title: 'Accessibility Design Plugin',
-    description:
-     'As part of Northeastern’s AccessHack, co-built a TypeScript Figma plugin that evaluates frames and components for <strong>accessibility issues</strong>—<strong>color contrast, missing alt text, and keyboard focus order</strong>—and highlights them directly in the design canvas. This tool helps designers catch <strong>WCAG compliance</strong> gaps early, making <strong>inclusive design</strong> easier from the start.',
-    tags: ['TypeScript', 'Figma Plugin', 'Accessibility', 'WCAG'],
-    link: 'https://github.com/ayatarist/AccessHackPlugIn'
-  },
-  {
     title: 'FlappyBison',
     description:
       'FlappyBison started as a class project to explore <strong>JavaFX</strong> and <strong>OOP design</strong>. Created through a <strong>modular architecture</strong> with separate classes for <strong>game logic, collision detection, and UI navigation</strong>, using JavaFX’s animation and event APIs to manage scene transitions (start, play, game‑over). <strong>Custom physics</strong> simulate the bird’s movement, and <strong>procedurally generated obstacles</strong> keep gameplay challenging.',
@@ -39,6 +32,13 @@ const projects: Project[] = [
       'I developed Python scripts and Jupyter notebooks using Gurobi to build <strong>linear and mixed‑integer programming models</strong> that schedule power plant output to minimize generation costs while meeting demand forecasts and CO₂ emission limits. I cleaned and processed historical load and emission data, <strong>formulated objective functions and constraints</strong>, and created visualizations to explore <strong>cost‑versus‑emissions trade‑offs</strong>, gaining hands‑on experience in <strong>energy economics and optimization techniques</strong>.',
     tags: ['Python', 'Gurobi', 'Linear Programming', 'MIP'],
     link: 'https://github.com/ayatarist/power_gen_optimization'
+  },
+  {
+    title: 'Accessibility Design Plugin',
+    description:
+     'As part of Northeastern’s AccessHack, co-built a TypeScript Figma plugin that evaluates frames and components for <strong>accessibility issues</strong>—<strong>color contrast, missing alt text, and keyboard focus order</strong>—and highlights them directly in the design canvas. This tool helps designers catch <strong>WCAG compliance</strong> gaps early, making <strong>inclusive design</strong> easier from the start.',
+    tags: ['TypeScript', 'Figma Plugin', 'Accessibility', 'WCAG'],
+    link: 'https://github.com/ayatarist/AccessHackPlugIn'
   },
   {
     title: 'Digitizing Suzette (Fork)',

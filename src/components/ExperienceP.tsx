@@ -65,6 +65,7 @@ const timelineData: Record<'professional' | 'education' | 'leadership', Timeline
         'Led interviews with digital accessibility specialists and  business owners to surface practical barriers',
         'Synthesized qualitative data in Dedoose to identify recurring compliance gaps and user pain points',
         'Reviewed ADA Accessibility Standards and emerging legislation to inform audit criteria',
+        'Explored dynamics of cross-functional collaboration across teams, pinpointing common communication and workflow challenges in software development.',
         'Delivered tailored advisory sessions, translating technical findings into clear, actionable recommendations for business owners'
       ],
       skills: [
@@ -140,16 +141,17 @@ const timelineData: Record<'professional' | 'education' | 'leadership', Timeline
       id: 'awards-leadership',
       description: '', // Keep this description field if it's meant for a general overview of this section
       achievements: [
-        '<strong>Bucknell Boulder Mozilla Tech Fellow</strong> — Selected for Mozilla Foundation\'s Responsible Computing Challenge. Conducted extensive research into <strong>digital accessibility</strong>, assessing WCAG compliance for various businesses and formulating practical recommendations. Beyond compliance, I investigated the <strong>intersections of digital accessibility and sustainability</strong>, speaking with subject matter experts to identify systemic patterns. Additionally, I explored dynamics of <strong>cross-functional collaboration</strong> across UI/UX designers, project managers, and software engineers, pinpointing common communication and workflow challenges in software development.',
+        '<strong>Bucknell Boulder Mozilla Tech Fellow</strong> ',
+        '    • Selected for Mozilla Foundation\'s Responsible Computing Challenge. ', 
+        '<strong>Grace Hopper Advancing Inclusion Scholar \'24</strong>',
+        '<strong>Society of Women Engineers Scholar \'24</strong>',
+        '<strong>Michael M. & Lillian Amber Fremont Scholar</strong>',
         '<strong>Digital Humanities Researcher</strong> — Bucknell University',
         '<strong>French Teaching Assistant</strong> — Bucknell University',
-        '<strong>Leadership Intern</strong> — College of Engineering',
+        '<strong> Leadership Intern</strong> — Office of the Dean of Engineering, Bucknell University',
         '    • Led cross-departmental student initiatives and facilitated communication between engineering students and faculty leadership',
         '<strong>Class Representative</strong> — Society of Women Engineers',
         '<strong>Founder & President</strong> — Middle Eastern North African Student Association',
-        '<strong>Michael M. & Lillian Amber Fremont Scholar</strong>',
-        '<strong>Grace Hopper Advancing Inclusion Scholar \'24</strong>',
-        '<strong>Society of Women Engineers Scholar \'24</strong>',
         '<strong>Dean\'s List \'22, \'23, \'24</strong>'
       ],
       skills: [],
