@@ -3,6 +3,7 @@
 
 import React from 'react'
 import { Mail, Linkedin, Github, Phone } from 'lucide-react'
+import SrOnly from '@/components/SrOnly'; 
 
 export default function PortfolioFooter() {
   const contactInfo = [
@@ -75,6 +76,8 @@ export default function PortfolioFooter() {
                 className="p-2 bg-amber-900 rounded-full text-white hover:bg-amber-700 transition duration-200"
               >
                 <item.icon className="w-4 h-4" />
+                {/* MODIFIED LINE BELOW: Added SrOnly with label and new tab notification */}
+                <SrOnly>{item.label} (opens in a new tab)</SrOnly>
               </a>
             ))}
           </div>

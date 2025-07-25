@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client'
 import React, { useState, useEffect } from 'react';
+import SrOnly from '@/components/SrOnly'; // <-- ADD THIS IMPORT
 
 interface TypewriterTextProps {
   text: string
@@ -147,9 +148,11 @@ export default function Hero() {
                     className="hover:text-orange-600 transition-all duration-300 relative"
                   >
                     {item.text}
+                    {/* MODIFIED LINE BELOW: Added SrOnly conditionally */}
+                    {item.external && <SrOnly>(opens in a new tab)</SrOnly>} 
                     <span className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-orange-900 to-amber-500" />
                   </a>
-                  {idx < 4 && <span className="text-amber-900">•</span>}
+                  {idx < 4 && <span className="text-amber-900">•</span>} {/* Be careful with idx < 4 here if you change the number of links */}
                 </React.Fragment>
               ))}
             </nav>

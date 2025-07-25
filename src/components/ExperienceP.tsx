@@ -4,6 +4,7 @@
 import React, { useState, useEffect, Dispatch, SetStateAction } from 'react'
 import { MapPin, Briefcase, Users, GraduationCap } from 'lucide-react'
 
+
 interface TimelineEntry {
   id: string
   date?: string

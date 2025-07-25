@@ -2,6 +2,7 @@
 "use client";
 
 import React from 'react';
+import SrOnly from '@/components/SrOnly'; // <-- ADD THIS IMPORT
 
 interface Project {
   title: string
@@ -102,7 +103,7 @@ export default function ProjectsOverview() {
                   {project.title}
                 </h3>
                 {/* Use dangerouslySetInnerHTML to render HTML from the string */}
-                <p className="text-stone-700 mb-3 text-sm text-justify" dangerouslySetInnerHTML={{ __html: project.description }}>
+                <p className="text-stone-700 mb-3  text-sm text-justify" dangerouslySetInnerHTML={{ __html: project.description }}>
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, i) => (
@@ -121,6 +122,7 @@ export default function ProjectsOverview() {
                   className="inline-block mt-2 text-sm font-medium text-orange-600 hover:text-amber-800 hover:underline flex items-center"
                 >
                   View on GitHub →
+                  <SrOnly>(opens in a new tab)</SrOnly> {/* <-- MODIFIED LINE */}
                 </a>{"       "}
                 {/* Conditionally show press‑release link */}
                 {project.pressReleaseLink && (
@@ -132,6 +134,7 @@ export default function ProjectsOverview() {
                   >
                   {"       "} 
                   Learn More →
+                  <SrOnly>(opens in a new tab)</SrOnly> {/* <-- MODIFIED LINE */}
                   </a>
 
                 )}
