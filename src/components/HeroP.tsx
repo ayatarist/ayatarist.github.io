@@ -138,7 +138,7 @@ export default function Hero() {
                 // { href: "#home", text: "Home" },
                 { href: "#experience", text: "Experience" },
                 { href: "#projects", text: "Projects" },
-                { href: "/docs/resume.pdf", text: "Resume", external: true },
+                { href: "/docs/resumetobeused.pdf", text: "Resume", external: true },
                 // { href: "#about", text: "About Me" },
               ].map((item, idx) => (
                 <React.Fragment key={item.href}>
